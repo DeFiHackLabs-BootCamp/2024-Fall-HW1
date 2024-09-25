@@ -23,7 +23,7 @@ contract MyTokenBaseTest is Test {
     MyToken internal token;
 
     // DeFiHackLabsBootCamp contract address on sepolia
-    address internal constant deFiHackLabsBootCamp = 0x89cd32f76cC96912E759533306D8b0bf38d8b2F7;
+    address internal constant deFiHackLabsBootCamp = 0x1a53bD1e609Db5876df8CE01e516974f1A3A0A4f;
 
     modifier checkChallengeSolved() {
         // validate mint function
@@ -55,7 +55,6 @@ contract MyTokenBaseTest is Test {
     }
 
     function testIsResister() public {
-        vm.createSelectFork("anvil");
         uint256 number = vm.envUint("NUMBER");
         bool isRegister = IDeFiHackLabsBootCamp(deFiHackLabsBootCamp).isRegister(number);
 
@@ -63,19 +62,10 @@ contract MyTokenBaseTest is Test {
     }
 
     function testIsSignIn() public {
-        vm.createSelectFork("anvil");
         uint256 number = vm.envUint("NUMBER");
         bool isSignIn = IDeFiHackLabsBootCamp(deFiHackLabsBootCamp).isSignIn(number);
 
         assertTrue(isSignIn);
-    }
-
-    function testStudentAddressIsContract() public {
-        vm.createSelectFork("anvil");
-        uint256 number = vm.envUint("NUMBER");
-        address student = IDeFiHackLabsBootCamp(deFiHackLabsBootCamp).students(number);
-
-        assertNotEq(student.code.length, 0);
     }
 
     function setUp() public virtual {

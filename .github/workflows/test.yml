@@ -23,16 +23,6 @@ jobs:
                   forge install
               id: test
 
-            ## Problem Template
-            # - name: Problem <id>
-            #   id: problem-<id>
-            #   uses: classroom-resources/autograding-command-grader@v1
-            #   with:
-            #     test-name: Problem <id>
-            #     command: cd hw && forge test --mt <foundry-test-name>
-            #     timeout: <time-limit>
-            #     max-score: <max-score>
-
             - name: Problem 1
               id: problem-1
               uses: classroom-resources/autograding-command-grader@v1
@@ -40,33 +30,24 @@ jobs:
                   test-name: Problem 1
                   command: cd hw && forge test --mt testTransferAcrossMultipleEOA
                   timeout: 10
-                  max-score: 60
+                  max-score: 80
 
             - name: Problem 2
               id: problem-2
               uses: classroom-resources/autograding-command-grader@v1
               with:
                   test-name: Problem 2
-                  command: cd hw && forge test --mt testIsResister
-                  timeout: 10
-                  max-score: 20
+                  command: cd hw && echo "${{ secrets.NUMBER }}" >> .env && forge test --mt testIsResister -f ${{ secrets.SEPOLIA_RPC_URL}}
+                  timeout: 30
+                  max-score: 10
 
             - name: Problem 3
-              id: problem-2
+              id: problem-3
               uses: classroom-resources/autograding-command-grader@v1
               with:
                   test-name: Problem 3
-                  command: cd hw && forge test --mt testIsSignIn
-                  timeout: 10
-                  max-score: 10
-
-            - name: Problem 4
-              id: problem-2
-              uses: classroom-resources/autograding-command-grader@v1
-              with:
-                  test-name: Problem 4
-                  command: cd hw && forge test --mt testStudentAddressIsContract
-                  timeout: 10
+                  command: cd hw && echo "${{ secrets.NUMBER }}" >> .env && forge test --mt testIsSignIn -f ${{ secrets.SEPOLIA_RPC_URL}}
+                  timeout: 30
                   max-score: 10
 
             ## Modify Autograding Reporter

@@ -18,5 +18,7 @@ First, call the `register` function using your student ID. After successfully re
 -   Contract address: `0x89cd32f76cC96912E759533306D8b0bf38d8b2F7` in sepolia testnet
 -   Ethersacan:https://sepolia.etherscan.io/address/0x89cd32f76cC96912E759533306D8b0bf38d8b2F7#code
 
+Note: Remember to set up your `SEPOLIA_RPC_URL` and `NUMBER` variables in your `.env` file. You can simply copy the `.env.example` file to `.env` before setting the environment variables.
+
 > [!IMPORTANT]  
 > Each student is only allowed to register one EOA account. Ensure you use your own student ID and do not attempt to register someone else’s.
