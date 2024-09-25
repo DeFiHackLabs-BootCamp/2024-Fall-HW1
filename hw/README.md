@@ -1,66 +1,22 @@
-## Foundry
+# DeFiHackLabs BootCamp - Week1 Homework
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+> [!WARNING]
+> DO NOT MODIFY THE `MyTokenBase.t.sol` FILE, OR YOU WILL GET ZERO POINTS FROM THIS CHALLENGE
 
-Foundry consists of:
+### Task 1
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+Follow the `@todo` instruction to complete the `MyToken.sol` contract and `MyToken.t.sol` test.
 
-## Documentation
+### Task 2
 
-https://book.getfoundry.sh/
+This task requires interacting with an on-chain contract. Please set up an `RPC_URL` in the `.env` file and prepare an EOA account to interact with the on-chain contract.
 
-## Usage
+You will interact with the `DeFiHackLabsBootCamp` on-chain contract.
 
-### Build
+First, call the `register` function using your student ID. After successfully registering, call the `signIn` function to complete the process.
 
-```shell
-$ forge build
-```
+-   Contract address: `0x89cd32f76cC96912E759533306D8b0bf38d8b2F7` in sepolia testnet
+-   Ethersacan:https://sepolia.etherscan.io/address/0x89cd32f76cC96912E759533306D8b0bf38d8b2F7#code
 
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+> [!IMPORTANT]  
+> Each student is only allowed to register one EOA account. Ensure you use your own student ID and do not attempt to register someone else’s.
