@@ -37,7 +37,7 @@ jobs:
               uses: classroom-resources/autograding-command-grader@v1
               with:
                   test-name: Problem 2
-                  command: echo "${{ secrets.NUMBER }}" >> .env && cd hw && forge test --mt testIsResister -f ${{ secrets.SEPOLIA_RPC_URL}}
+                  command: cd hw && echo "${{ secrets.NUMBER }}" >> .env && forge test --mt testIsResister -f ${{ secrets.SEPOLIA_RPC_URL}}
                   timeout: 30
                   max-score: 10
 
@@ -46,7 +46,7 @@ jobs:
               uses: classroom-resources/autograding-command-grader@v1
               with:
                   test-name: Problem 3
-                  command: echo "${{ secrets.NUMBER }}" >> .env && cd hw && forge test --mt testIsSignIn -f ${{ secrets.SEPOLIA_RPC_URL}}
+                  command: cd hw && echo "${{ secrets.NUMBER }}" >> .env && forge test --mt testIsSignIn -f ${{ secrets.SEPOLIA_RPC_URL}}
                   timeout: 30
                   max-score: 10
 
