@@ -3,7 +3,6 @@ pragma solidity =0.8.25;
 
 import {Test, console2} from "forge-std/Test.sol";
 import {MyToken} from "src/MyToken.sol";
-import "forge-std/console.sol";
 
 /**
  * DO NOT MODIFY THIS FILE, OR YOU WILL GET ZERO POINTS FROM THIS CHALLENGE
@@ -24,7 +23,7 @@ contract MyTokenBaseTest is Test {
     MyToken internal token;
 
     // DeFiHackLabsBootCamp contract address on sepolia
-    address internal constant deFiHackLabsBootCamp = 0x0a6B5d98ADD6435968C1EEe92fa3A328676E382e;
+    address internal constant deFiHackLabsBootCamp = 0xA75a02b1047eAD0760A95Ab88852005735e6D9e8;
 
     modifier checkChallengeSolved() {
         // validate mint function
@@ -60,7 +59,7 @@ contract MyTokenBaseTest is Test {
         uint256 number = 0;
 
         for (uint256 i = 0; i < b.length; i++) {
-            require(b[i] >= 0x30 && b[i] <= 0x39);
+            require(b[i] >= 0x30 && b[i] <= 0x39, "Fail");
             number = number * 10 + (uint256(uint8(b[i])) - 48);
         }
 
@@ -132,12 +131,9 @@ contract MyTokenBaseTest is Test {
     }
 
     function testIsResister() public {
-        // uint256 number = vm.envUint("NUMBER");
         string memory path = "./number.txt";
         string memory numberString = vm.readFile(path);
-
         uint256 number = stringToUint(numberString);
-        console.log(number);
 
         bool isRegister = IDeFiHackLabsBootCamp(deFiHackLabsBootCamp).isRegister(number);
 
@@ -145,7 +141,10 @@ contract MyTokenBaseTest is Test {
     }
 
     function testIsSignIn() public {
-        uint256 number = vm.envUint("NUMBER");
+        string memory path = "./number.txt";
+        string memory numberString = vm.readFile(path);
+        uint256 number = stringToUint(numberString);
+
         bool isSignIn = IDeFiHackLabsBootCamp(deFiHackLabsBootCamp).isSignIn(number);
 
         assertTrue(isSignIn);
