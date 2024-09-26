@@ -15,8 +15,8 @@ contract Demo {
     }
 
     function doNothing() public {
-        internalSuccess();
-        internalFail();
+        // internalSuccess();
+        // internalFail();
         emit DoNothing();
     }
 
@@ -87,6 +87,7 @@ contract DemoCheatCodeTest is Test {
     }
 
     function testInternalTrace() external {
+        // uncomment the `internalSuccess` and `internalFail` functions in `doNothing` function
         demo.doNothing();
     }
 }
