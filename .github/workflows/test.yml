@@ -37,7 +37,8 @@ jobs:
               uses: classroom-resources/autograding-command-grader@v1
               with:
                   test-name: Problem 2
-                  command: cd hw && echo "${{ secrets.NUMBER }}" >> .env && forge test --mt testIsResister -f ${{ secrets.SEPOLIA_RPC_URL}}
+                  # we use public rpc url for testing
+                  command: cd hw && forge test --mt testIsResister -f https://ethereum-sepolia-rpc.publicnode.com
                   timeout: 30
                   max-score: 10
 
@@ -46,7 +47,8 @@ jobs:
               uses: classroom-resources/autograding-command-grader@v1
               with:
                   test-name: Problem 3
-                  command: cd hw && echo "${{ secrets.NUMBER }}" >> .env && forge test --mt testIsSignIn -f ${{ secrets.SEPOLIA_RPC_URL}}
+                  # we use public rpc url for testing
+                  command: cd hw && forge test --mt testIsSignIn -f https://ethereum-sepolia-rpc.publicnode.com
                   timeout: 30
                   max-score: 10
 
