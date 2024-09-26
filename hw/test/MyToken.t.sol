@@ -35,9 +35,9 @@ contract MyTokenTest is MyTokenBaseTest {
         assertEq(token.balanceOf(user3), 8 ether);
 
         // TODO: transfer your token
-        // user1 transfer 5 token to user2
-        // user2 transfer 4 token to user3
-        // user3 transfer 3 token to user1
+        // user1 transfer 5 ether token to user2
+        // user2 transfer 4 ether token to user3
+        // user3 transfer 3 ether token to user1
         vm.startPrank(user1);
         token.transfer(user2, 5 ether);
         vm.stopPrank();
@@ -60,8 +60,8 @@ contract MyTokenTest is MyTokenBaseTest {
         assertEq(token.balanceOf(user3), 9 ether);
 
         // TODO: transfer someone else's tokens
-        // user1 approves 3 Ether for user2
-        // user2 transfers 2 Ether from user1 to user3
+        // user1 approves 3 ether for user2
+        // user2 transfers 2 ether from user1 to user3
         // retrieve the remaining allowance that user1 has given to user2
         // user2 transfers the remain allowance from user1 to user2
         vm.startPrank(user1);
