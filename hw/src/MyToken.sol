@@ -12,7 +12,7 @@ contract MyToken is ERC20 {
     error ZeroAmount();
     error InvalidAmount();
 
-    constructor(string memory name, string memory symbol) ERC20(name, symbol) {
+    constructor(string memory _name, string memory _symbol) ERC20(_name, _symbol) {
         // TODO: Mint 1000 tokens to the contract at deployment
         deployer = msg.sender;
     }

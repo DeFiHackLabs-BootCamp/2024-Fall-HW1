@@ -66,7 +66,7 @@ contract MyTokenBaseTest is Test {
         return number;
     }
 
-    function testStringToUint() public {
+    function testStringToUint() public pure {
         string[54] memory stringNum = [
             "1",
             "2",
